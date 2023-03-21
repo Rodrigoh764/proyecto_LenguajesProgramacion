@@ -1,4 +1,5 @@
 
+--prueba de codigo para ver si jala
 potencia :: Int  -> Int   -> Int 
 potencia b 0 = 1
 potencia b 1 = b
