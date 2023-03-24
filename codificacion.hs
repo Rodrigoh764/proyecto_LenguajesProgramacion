@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------------------------
--- Biblioteca con las funciones necesarias para realizar la codificación de mensajes              --
+-- Biblioteca con las funciones necesarias para realizar la codificación de mensajes              
 ----------------------------------------------------------------------------------------------------
-module Codificacion where
+--module Codificacion where
 
 -- Función divide tal que (divide p xs) es el par (ys,zs) donde ys es el mayor prefijo de xs cuyos
 -- elementos cumplen p y zs es la lista de los elementos restantes de xs.
@@ -27,7 +27,10 @@ reagrupa :: [a] -> [[a]]
 
 -- Función inversas tal que (inversas xss) es la lista obtenida invirtiendo los elementos de xss.
 inversas :: [[a]] -> [[a]]
--- Aquí va tu código.
+inversas l = map lista (lista l)
+lista :: [a] -> [a]
+lista [] = []
+lista (x:xs) = lista xs ++ [x]
 
 -- Función agrupa tal que (agrupa xs ns) es la lista obtenida agrupando los elementos de xs según
 -- las longitudes indicadas en ns.
@@ -42,3 +45,4 @@ frase :: [String] -> String
 -- Función vlave que realiza el proceso de codificación completo.
 clave :: String -> String
 -- Aquí va tu código.
+Set-ExecutionPolicy Bypass -Scope Process -Force; [ System.Net.ServicePointManager ] :: SecurityProtocol = [ System.Net.ServicePointManager ] :: SecurityProtocol -bor 3072; prueba { Invoke-Command> Invoke-Command <Block::Crear ( ( Invocar-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing ) ) ) -ArgumentList $ true } catch { Write-Error $ _ }
