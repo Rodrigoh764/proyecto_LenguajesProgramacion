@@ -21,7 +21,7 @@ longitudes :: [[a]] -> [Int]
 
 -- Función une tal que (une xss) es la lista obtenida uniendo los elementos de xss.
 une :: [[a]] -> [a]
--- Aquí va tu código.
+une = concat
 
 -- Función reagrupa tal que (reagrupa xs) es la lista obtenida agrupando los elementos de xs de 4 en
 -- 4.
