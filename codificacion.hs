@@ -1,6 +1,4 @@
---UN MENSAJE PARA VER SI SE ACTUALIZA EN LA RAMA MASTER
---asdfghjklkjgfddfghj
---Hola estor aprendiendo a usar git 
+
 ----------------------------------------------------------------------------------------------------
 -- Biblioteca con las funciones necesarias para realizar la codificación de mensajes              
 ----------------------------------------------------------------------------------------------------
@@ -22,7 +20,9 @@ longitudes :: [[a]] -> [Int]
 -- Función une tal que (une xss) es la lista obtenida uniendo los elementos de xss.
 une :: [[a]] -> [a]
 une = concat
-
+--lista :: [[a]] -> [a]
+--lista [] = []
+--lista (x:xs) =  x ++ lista(xs)
 -- Función reagrupa tal que (reagrupa xs) es la lista obtenida agrupando los elementos de xs de 4 en
 -- 4.
 reagrupa :: [a] -> [[a]]
