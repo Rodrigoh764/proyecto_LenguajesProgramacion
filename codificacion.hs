@@ -6,9 +6,6 @@
 
 -- Función divide tal que (divide p xs) es el par (ys,zs) donde ys es el mayor prefijo de xs cuyos
 -- elementos cumplen p y zs es la lista de los elementos restantes de xs.
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# HLINT ignore "Use foldr" #-}
-{-# HLINT ignore "Redundant bracket" #-}
 divide :: (a -> Bool) -> [a] -> ([a],[a])
 divide _ [] = ([],[])
 divide p (xs) = (yz, zs)
@@ -22,7 +19,7 @@ palabras :: String -> [String]
 
 -- Función longitudes tal que (longitudes xss) es la lista de las longitudes de los elementos xss.
 longitudes :: [[a]] -> [Int]
--- Aquí va tu código.
+longitudes xss = [(length xs) | xs <- xss]
 
 -- Función une tal que (une xss) es la lista obtenida uniendo los elementos de xss.
 --une :: [[a]] -> [a]
