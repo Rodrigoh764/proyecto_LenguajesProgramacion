@@ -1,6 +1,4 @@
---UN MENSAJE PARA VER SI SE ACTUALIZA EN LA RAMA MASTER
---asdfghjklkjgfddfghj
---Hola estor aprendiendo a usar git 
+
 ----------------------------------------------------------------------------------------------------
 -- Biblioteca con las funciones necesarias para realizar la codificación de mensajes              
 ----------------------------------------------------------------------------------------------------
@@ -17,20 +15,24 @@ divide p (xs) = (yz, zs)
 
 -- Función palabras tal que (palabras cs) es la lista de palabras contenidas en la cadena cs.
 palabras :: String -> [String]
--- Aquí va tu código.
+palabras "" = []
+palabras cs = ys : (palabras . drop 1) zs
+   where (ys, zs) = span (/=' ') cs
 
 -- Función longitudes tal que (longitudes xss) es la lista de las longitudes de los elementos xss.
 longitudes :: [[a]] -> [Int]
--- Aquí va tu código.
+longitudes xss = [(length xs) | xs <- xss]
 
 -- Función une tal que (une xss) es la lista obtenida uniendo los elementos de xss.
 une :: [[a]] -> [a]
--- Aquí va tu código.
+une [] = []
+une (x:xs) =  x ++ une(xs)
 
 -- Función reagrupa tal que (reagrupa xs) es la lista obtenida agrupando los elementos de xs de 4 en
 -- 4.
 reagrupa :: [a] -> [[a]]
--- Aquí va tu código.
+reagrupa [] = []
+reagrupa xs = (take 4 xs): reagrupa (drop 4 xs)
 
 -- Función inversas tal que (inversas xss) es la lista obtenida invirtiendo los elementos de xss.
 inversas :: [[a]] -> [[a]]
@@ -49,9 +51,13 @@ agrupa xs (n:ns) = take n xs : agrupa (drop n xs) ns
 -- Función frase tal que (frase xs) es la frase obtenida de las palabras de xs dejando un espacio en
 -- blanco entre ellas.
 frase :: [String] -> String
--- Aquí va tu código.
+frase [x] = x
+frase (x:xs) = x ++ " " ++ (frase xs)
+frase [] = []
 
 -- Función vlave que realiza el proceso de codificación completo.
 clave :: String -> String
--- Aquí va tu código.
-Set-ExecutionPolicy Bypass -Scope Process -Force; [ System.Net.ServicePointManager ] :: SecurityProtocol = [ System.Net.ServicePointManager ] :: SecurityProtocol -bor 3072; prueba { Invoke-Command> Invoke-Command <Block::Crear ( ( Invocar-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing ) ) ) -ArgumentList $ true } catch { Write-Error $ _ }
+clave xss =
+    frase (agrupa (une (inversas (reagrupa (une pxss)))) (reverse (longitudes pxss)))
+    where 
+        pxss = palabras xss
