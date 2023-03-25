@@ -6,6 +6,9 @@
 
 -- Función divide tal que (divide p xs) es el par (ys,zs) donde ys es el mayor prefijo de xs cuyos
 -- elementos cumplen p y zs es la lista de los elementos restantes de xs.
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use foldr" #-}
+{-# HLINT ignore "Redundant bracket" #-}
 divide :: (a -> Bool) -> [a] -> ([a],[a])
 divide _ [] = ([],[])
 divide p (xs) = (yz, zs)
@@ -22,9 +25,11 @@ longitudes :: [[a]] -> [Int]
 -- Aquí va tu código.
 
 -- Función une tal que (une xss) es la lista obtenida uniendo los elementos de xss.
+--une :: [[a]] -> [a]
+--une = concat
 une :: [[a]] -> [a]
--- Aquí va tu código.
-
+une [] = []
+une (x:xs) =  x ++ une(xs)
 -- Función reagrupa tal que (reagrupa xs) es la lista obtenida agrupando los elementos de xs de 4 en
 -- 4.
 reagrupa :: [a] -> [[a]]
@@ -52,4 +57,3 @@ frase :: [String] -> String
 -- Función vlave que realiza el proceso de codificación completo.
 clave :: String -> String
 -- Aquí va tu código.
-Set-ExecutionPolicy Bypass -Scope Process -Force; [ System.Net.ServicePointManager ] :: SecurityProtocol = [ System.Net.ServicePointManager ] :: SecurityProtocol -bor 3072; prueba { Invoke-Command> Invoke-Command <Block::Crear ( ( Invocar-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing ) ) ) -ArgumentList $ true } catch { Write-Error $ _ }
