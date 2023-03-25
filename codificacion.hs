@@ -9,9 +9,11 @@
 -- Función divide tal que (divide p xs) es el par (ys,zs) donde ys es el mayor prefijo de xs cuyos
 -- elementos cumplen p y zs es la lista de los elementos restantes de xs.
 divide :: (a -> Bool) -> [a] -> ([a],[a])
-divide _ [] = []
-divide f (x:xs) 
-    | f x 
+divide _ [] = ([],[])
+divide p (xs) = (yz, zs)
+    where 
+        yz = takeWhile p xs
+        zs = dropWhile p xs
 
 -- Función palabras tal que (palabras cs) es la lista de palabras contenidas en la cadena cs.
 palabras :: String -> [String]
@@ -40,7 +42,9 @@ lista (x:xs) = lista xs ++ [x]
 -- Función agrupa tal que (agrupa xs ns) es la lista obtenida agrupando los elementos de xs según
 -- las longitudes indicadas en ns.
 agrupa :: [a] -> [Int] -> [[a]]
--- Aquí va tu código.
+agrupa [] _     = []
+agrupa _ []     = []
+agrupa xs (n:ns) = take n xs : agrupa (drop n xs) ns
 
 -- Función frase tal que (frase xs) es la frase obtenida de las palabras de xs dejando un espacio en
 -- blanco entre ellas.
