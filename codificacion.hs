@@ -9,7 +9,9 @@
 -- Función divide tal que (divide p xs) es el par (ys,zs) donde ys es el mayor prefijo de xs cuyos
 -- elementos cumplen p y zs es la lista de los elementos restantes de xs.
 divide :: (a -> Bool) -> [a] -> ([a],[a])
--- Aquí va tu código.
+divide _ [] = []
+divide f (x:xs) 
+    | f x 
 
 -- Función palabras tal que (palabras cs) es la lista de palabras contenidas en la cadena cs.
 palabras :: String -> [String]
