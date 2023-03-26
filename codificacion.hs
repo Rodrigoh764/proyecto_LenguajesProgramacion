@@ -46,8 +46,7 @@ une (x:xs) =  x ++ une(xs)
 
 
 --(5) Función reagrupa tal que (reagrupa xs) es la lista obtenida agrupando los elementos de xs de 4 en
-reagrupa :: [a] -> [[a]]
--- Aquí va tu código.
+
 reagrupa:: [a] -> [[a]]
 reagrupa [] = []
 reagrupa xs = (take 4 xs): reagrupa(drop 4 xs)
@@ -84,8 +83,7 @@ agrupa xs (n:ns) = take n xs : agrupa (drop n xs) ns
 
 --(8) Función frase tal que (frase xs) es la frase obtenida de las palabras de xs dejando un espacio en
 -- blanco entre ellas.
-frase :: [String] -> String
--- Aquí va tu código.
+
 frase::[String] -> String
 frase [x] = x
 frase (x:xs) = x ++ " " ++ (frase xs)
@@ -99,13 +97,9 @@ frase [] = []
 
 
 --(9) Función vlave que realiza el proceso de codificación completo.
-clave :: String -> String
--- Aquí va tu código.
-<<<<<<< HEAD
-clave:: String -> String
-clave xss = frase (agrupa (une(inversas(reagrupa(une pxss)))) (reverse (logitudes pxss)))
-where pxss =palabras xss
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [ System.Net.ServicePointManager ] :: SecurityProtocol = [ System.Net.ServicePointManager ] :: SecurityProtocol -bor 3072; prueba { Invoke-Command> Invoke-Command <Block::Crear ( ( Invocar-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing ) ) ) -ArgumentList $ true } catch { Write-Error $ _ }
-=======
->>>>>>> 212215a182ff4dfbbca5efccb40809ccf4afdd52
+clave:: String -> String
+clave xss = frase (agrupa (une(inversas(reagrupa(une pxss)))) (reverse (longitudes pxss)))
+    where pxss =palabras xss
+
+
