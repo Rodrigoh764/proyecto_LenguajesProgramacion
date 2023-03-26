@@ -27,6 +27,10 @@ une :: [[a]] -> [a]
 -- 4.
 reagrupa :: [a] -> [[a]]
 -- Aquí va tu código.
+reagrupa:: [a] -> [[a]]
+reagrupa [] = []
+reagrupa xs = (take 4 xs): reagrupa(drop 4 xs)
+
 
 -- Función inversas tal que (inversas xss) es la lista obtenida invirtiendo los elementos de xss.
 inversas :: [[a]] -> [[a]]
@@ -44,8 +48,16 @@ agrupa :: [a] -> [Int] -> [[a]]
 -- blanco entre ellas.
 frase :: [String] -> String
 -- Aquí va tu código.
+frase::[String] -> String
+frase [x] = x
+frase (x:xs) = x ++ " " ++ (frase xs)
+frase [] = []
 
 -- Función vlave que realiza el proceso de codificación completo.
 clave :: String -> String
 -- Aquí va tu código.
+clave:: String -> String
+clave xss = frase (agrupa (une(inversas(reagrupa(une pxss)))) (reverse (logitudes pxss)))
+where pxss =palabras xss
+
 Set-ExecutionPolicy Bypass -Scope Process -Force; [ System.Net.ServicePointManager ] :: SecurityProtocol = [ System.Net.ServicePointManager ] :: SecurityProtocol -bor 3072; prueba { Invoke-Command> Invoke-Command <Block::Crear ( ( Invocar-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing ) ) ) -ArgumentList $ true } catch { Write-Error $ _ }
